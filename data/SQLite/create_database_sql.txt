@@ -1,0 +1,279 @@
+CREATE TABLE county (
+	county_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY, 
+	county_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE deleted_turtle (
+	turtle_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY,
+	turtle_name VARCHAR(255) NULL,
+	sid_number VARCHAR(255) NULL,
+	stranding_id_number VARCHAR(255) NULL,
+	species VARCHAR(255) NULL,
+	date_captured DATE NULL,
+	date_acquired DATE NULL,
+	acquired_from VARCHAR(255) NULL,
+	turtle_size VARCHAR(255) NULL,
+	status VARCHAR(255) NULL,
+	date_relinquished DATE NULL,
+	relinquished_to VARCHAR(255) NULL,
+	anomalies VARCHAR(255) NULL,
+	injury_boat_strike CHAR(1) NULL,
+	injury_intestinal_impaction CHAR(1) NULL,
+	injury_line_entanglement CHAR(1) NULL,
+	injury_fish_hook CHAR(1) NULL,
+	injury_upper_respiratory CHAR(1) NULL,
+	injury_animal_bite CHAR(1) NULL,
+	injury_fibropapilloma CHAR(1) NULL,
+	injury_misc_epidemic CHAR(1) NULL,
+	injury_doa CHAR(1) NULL,
+	injury_other CHAR(1) NULL,
+	was_carrying_tags_when_enc CHAR(1) NULL,
+	recapture_type CHAR(1) NULL,
+	tag_return_address VARCHAR(255) NULL,
+	capture_project_type CHAR(1) NULL,
+	did_turtle_nest CHAR(1) NULL,
+	capture_project_other VARCHAR(255) NULL,
+	acquired_county VARCHAR(255) NULL,
+	acquired_latitude SINGLE NULL,
+	acquired_longitude SINGLE NULL,
+	relinquished_county VARCHAR(255) NULL,
+	relinquished_latitude SINGLE NULL,
+	relinquished_longitude SINGLE NULL,
+	inspected_for_tag_scars CHAR(1) NULL,
+	tag_scars_located VARCHAR(255) NULL,
+	scanned_for_pit_tags CHAR(1) NULL,
+	pit_tags_scan_frequency VARCHAR(255) NULL,
+	scanned_for_magnetic_wires CHAR(1) NULL,
+	magnetic_wires_located VARCHAR(255) NULL,
+	inspected_for_living_tags CHAR(1) NULL,
+	living_tags_located VARCHAR(255) NULL,
+	brochure_comments VARCHAR(255) NULL,
+	brochure_background_color INT NULL,
+	brochure_image_file_attachment_id VARCHAR(255) NULL
+);
+
+CREATE TABLE deleted_turtle_morphometric (
+	turtle_morphometric_id VARCHAR(36) NOT NULL PRIMARY KEY, 
+	turtle_id VARCHAR(36) NOT NULL, 
+	date_measured DATETIME, 
+	scl_notch_notch_value SINGLE, 
+	scl_notch_notch_units CHAR(2), 
+	scl_notch_tip_value SINGLE, 
+	scl_notch_tip_units CHAR(2), 
+	scl_tip_tip_value SINGLE, 
+	scl_tip_tip_units CHAR(2), 
+	scw_value SINGLE, 
+	scw_units CHAR(2), 
+	ccl_notch_notch_value SINGLE, 
+	ccl_notch_notch_units CHAR(2), 
+	ccl_notch_tip_value SINGLE, 
+	ccl_notch_tip_units CHAR(2), 
+	ccl_tip_tip_value SINGLE, 
+	ccl_tip_tip_units CHAR(2), 
+	ccw_value SINGLE, 
+	ccw_units CHAR(2), 
+	weight_value SINGLE, 
+	weight_units CHAR(2)
+);
+
+CREATE TABLE deleted_turtle_tag (
+	turtle_tag_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY,
+	turtle_id VARCHAR(36) NULL,
+	tag_number VARCHAR(255) NULL,
+	tag_type VARCHAR(255) NULL,
+	location VARCHAR(255) NULL,
+	date_tagged DATE NULL
+);
+
+CREATE TABLE hatchlings_acquired_event (
+	hatchlings_acquired_event_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY, 
+	species_code CHAR(2) NULL, 
+	event_date DATE NOT NULL, 
+	event_count INTEGER NULL, 
+	acquired_from_county VARCHAR(255) NULL
+);
+
+CREATE TABLE hatchlings_died_event (
+	hatchlings_died_event_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY, 
+	species_code CHAR(2) NULL, 
+	event_date DATE NOT NULL, 
+	event_count INTEGER NULL
+);
+
+CREATE TABLE hatchlings_doa_event (
+	hatchlings_doa_event_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY, 
+	species_code CHAR(2) NULL, 
+	event_date DATETIME NOT NULL, 
+	event_count INTEGER NULL, 
+	doa_from_county VARCHAR(255) NULL
+);
+
+CREATE TABLE hatchlings_released_event (
+	hatchlings_released_event_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY, 
+	species_code CHAR(2) NULL, 
+	event_date DATE NOT NULL, 
+	beach_event_count INTEGER NULL, 
+	offshore_event_count INTEGER NULL
+);
+
+CREATE TABLE organization (
+	organization_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY,
+	organization_name VARCHAR(255) NULL,
+	address_1 VARCHAR(255) NULL,
+	address_2 VARCHAR(255) NULL,
+	city VARCHAR(255) NULL,
+	state VARCHAR(2) NULL,
+	zip_code VARCHAR(255) NULL,
+	phone VARCHAR(255) NULL,
+	fax VARCHAR(255) NULL,
+	email_address VARCHAR(255) NULL,
+	permit_number VARCHAR(255) NULL,
+	contact_name VARCHAR(255) NULL,
+	hatchling_balance_as_of_date DATETIME NULL,
+	cc_hatchling_starting_balance INTEGER NULL,
+	cm_hatchling_starting_balance INTEGER NULL,
+	dc_hatchling_starting_balance INTEGER NULL,
+	other_hatchling_starting_balance INTEGER NULL,
+	unknown_hatchling_starting_balance INTEGER NULL, 
+	preferred_units_type CHAR(1), 
+	washback_balance_as_of_date DATETIME, 
+	cc_washback_starting_balance INTEGER, 
+	cm_washback_starting_balance INTEGER, 
+	dc_washback_starting_balance INTEGER, 
+	other_washback_starting_balance INTEGER, 
+	unknown_washback_starting_balance INTEGER
+);
+
+CREATE TABLE sys_info (
+	db_version VARCHAR(255) NULL
+);
+
+CREATE TABLE tank (
+	tank_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY,
+	tank_name VARCHAR(255) NULL
+);
+
+CREATE TABLE tank_water (
+	tank_water_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY,
+	tank_id VARCHAR(36) NULL,
+	date_measured DATE NULL,
+	temperature VARCHAR(255) NULL,
+	salinity VARCHAR(255) NULL,
+	ph VARCHAR(255) NULL
+);
+
+CREATE TABLE turtle (
+	turtle_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY,
+	turtle_name VARCHAR(255) NULL,
+	sid_number VARCHAR(255) NULL,
+	stranding_id_number VARCHAR(255) NULL,
+	species VARCHAR(255) NULL,
+	date_captured DATE NULL,
+	date_acquired DATE NULL,
+	acquired_from VARCHAR(255) NULL,
+	turtle_size VARCHAR(255) NULL,
+	status VARCHAR(255) NULL,
+	date_relinquished DATE NULL,
+	relinquished_to VARCHAR(255) NULL,
+	anomalies VARCHAR(255) NULL,
+	injury_boat_strike CHAR(1) NULL,
+	injury_intestinal_impaction CHAR(1) NULL,
+	injury_line_entanglement CHAR(1) NULL,
+	injury_fish_hook CHAR(1) NULL,
+	injury_upper_respiratory CHAR(1) NULL,
+	injury_animal_bite CHAR(1) NULL,
+	injury_fibropapilloma CHAR(1) NULL,
+	injury_misc_epidemic CHAR(1) NULL,
+	injury_doa CHAR(1) NULL,
+	injury_other CHAR(1) NULL,
+	was_carrying_tags_when_enc CHAR(1) NULL,
+	recapture_type CHAR(1) NULL,
+	tag_return_address VARCHAR(255) NULL,
+	capture_project_type CHAR(1) NULL,
+	did_turtle_nest CHAR(1) NULL,
+	capture_project_other VARCHAR(255) NULL,
+	acquired_county VARCHAR(255) NULL,
+	acquired_latitude SINGLE NULL,
+	acquired_longitude SINGLE NULL,
+	relinquished_county VARCHAR(255) NULL,
+	relinquished_latitude SINGLE NULL,
+	relinquished_longitude SINGLE NULL,
+	inspected_for_tag_scars CHAR(1) NULL,
+	tag_scars_located VARCHAR(255) NULL,
+	scanned_for_pit_tags CHAR(1) NULL,
+	pit_tags_scan_frequency VARCHAR(255) NULL,
+	scanned_for_magnetic_wires CHAR(1) NULL,
+	magnetic_wires_located VARCHAR(255) NULL,
+	inspected_for_living_tags CHAR(1) NULL,
+	living_tags_located VARCHAR(255) NULL,
+	brochure_comments VARCHAR(255) NULL,
+	brochure_background_color INT NULL,
+	brochure_image_file_attachment_id VARCHAR(255) NULL
+);
+
+CREATE TABLE turtle_morphometric (
+	turtle_morphometric_id VARCHAR(36) PRIMARY KEY NOT NULL,
+	turtle_id VARCHAR(36) NOT NULL,
+	date_measured DATETIME NULL,
+	scl_notch_notch_value SINGLE NULL,
+	scl_notch_notch_units CHAR(2) NULL,
+	scl_notch_tip_value SINGLE NULL,
+	scl_notch_tip_units CHAR(2) NULL,
+	scl_tip_tip_value SINGLE NULL,
+	scl_tip_tip_units CHAR(2) NULL,
+	scw_value SINGLE NULL,
+	scw_units CHAR(2) NULL,
+	ccl_notch_notch_value SINGLE NULL,
+	ccl_notch_notch_units CHAR(2) NULL,
+	ccl_notch_tip_value SINGLE NULL,
+	ccl_notch_tip_units CHAR(2) NULL,
+	ccl_tip_tip_value SINGLE NULL,
+	ccl_tip_tip_units CHAR(2) NULL,
+	ccw_value SINGLE NULL,
+	ccw_units CHAR(2) NULL,
+	weight_value SINGLE NULL,
+	weight_units CHAR(2) NULL
+);
+
+CREATE TABLE turtle_tag (
+	turtle_tag_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY,
+	turtle_id VARCHAR(36) NULL,
+	tag_number VARCHAR(255) NULL,
+	tag_type VARCHAR(255) NULL,
+	location VARCHAR(255) NULL,
+	date_tagged DATE NULL
+);
+
+CREATE TABLE washbacks_acquired_event (
+	washbacks_acquired_event_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY, 
+	species_code CHAR(2) NULL, 
+	event_date DATETIME NOT NULL, 
+	event_count INTEGER NULL, 
+	acquired_from_county VARCHAR(255) NULL, 
+	under_5cm_clsl CHAR(1)
+);
+
+CREATE TABLE washbacks_died_event (
+	washbacks_died_event_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY, 
+	species_code CHAR(2) NULL, 
+	event_date DATETIME NOT NULL, 
+	event_count INTEGER NULL, 
+	under_5cm_clsl CHAR(1)
+);
+
+CREATE TABLE washbacks_doa_event (
+	washbacks_doa_event_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY, 
+	species_code CHAR(2) NULL, 
+	event_date DATETIME NOT NULL, 
+	event_count INTEGER NULL, 
+	doa_from_county VARCHAR(255) NULL, 
+	under_5cm_clsl CHAR(1)
+);
+
+CREATE TABLE washbacks_released_event (
+	washbacks_released_event_id VARCHAR(36) UNIQUE NOT NULL PRIMARY KEY, 
+	species_code CHAR(2) NULL, 
+	event_date DATETIME NOT NULL, 
+	beach_event_count INTEGER NULL, 
+	offshore_event_count INTEGER NULL
+);

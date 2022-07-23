@@ -1,0 +1,36 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Roster
+</name>
+</assembly>
+<members>
+<member name="T:TurtleGeek.Roster.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:TurtleGeek.Roster.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:TurtleGeek.Roster.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:TurtleGeek.Roster.My.Resources.Resources.app_ico">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:TurtleGeek.Roster.TurtleFileAttachment.FullFileName">
+ <summary>
+ When the TurtleFileAttachment object is new (that is, before the object has been saved), the FullFileName is the original path and file name.  Once the Ticket Attachment object has been saved (that is, the file has been copied to our storage folder), the FullFileName is our storage path (.exe path -> TicketId -> TurtleFileAttachmentId -> filename.ext).
+ </summary>
+</member>
+</members>
+</doc>

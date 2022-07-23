@@ -1,0 +1,230 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED1055B8-41A4-4E42-8BD3-0B960E92C3AE}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>TurtleGeek.Graphics</AssemblyName>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TurtleGeek.Graphics</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <TargetFrameworkVersion>v1.1</TargetFrameworkVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <ErrorReport>prompt</ErrorReport>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CHECK_ERRORS</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <DebugType>Full</DebugType>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <DocumentationFile>TurtleGeek.Graphics.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdapterUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ArrowItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AxesConstraint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Axis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BarPlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSequencePlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bitmap.PlotSurface2D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CandlePlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DateTimeAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FilledRegion.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Grid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HistogramPlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HorizontalLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDrawable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IGradient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImagePlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IPlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IPlotSurface2D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISequencePlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISurface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ITransform2D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LabelAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LabelPointPlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Legend.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LegendBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinearAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinearGradient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinePlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Marker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MarkerItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageAlignedPhysicalAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PhysicalAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PiAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlotSurface2D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PointD.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PointPlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RectangleBrushes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RectangleD.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SequenceAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StartStep.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StepGradient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StepPlot.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TradingDateTimeAxis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transform2D.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VerticalLine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows.PlotSurface2D.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="app.ico">
+      <LogicalName>app.ico</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Windows.PlotSurface2D.resx">
+      <LogicalName>Windows.PlotSurface2D.resources</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" Condition="'$(SharpDevelopBinPath)'==''" />
+  <Import Project="$(SharpDevelopBinPath)\SharpDevelop.Build.CSharp.targets" Condition="'$(SharpDevelopBinPath)'!=''" />
+</Project>
